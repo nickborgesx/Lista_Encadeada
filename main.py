@@ -23,8 +23,6 @@ class ListaSimples:
         value_list += f'{perc.valor}]'
         return  value_list
 
-
-
     def adicionar(self, valor): #Adicionar 'No' sempre no final da lista
         no = _No(valor) #Criação do No
         if not self.inicio: #Se não houver um início
