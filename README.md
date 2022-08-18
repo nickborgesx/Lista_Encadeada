@@ -1,5 +1,5 @@
 # Lista_Encadeada
-Lista Encadeada simples com vários métodos documentadas.
+Lista Encadeada simples com vários métodos documentados.
 
 # Métodos: 
 adicionar - Este método cria um _No no final da lista.
