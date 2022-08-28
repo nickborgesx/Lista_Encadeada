@@ -12,6 +12,8 @@ inserir - Este método inseri um _No no meio de dois _No's
 
 procurar_index - Este método procura um index da lista.
 
+procurar_valor - Este método procura um valor na lista com um index selecionado.
+
 editar_item - Este método criará um novo nó que irá substituir o item selecionado.
 
 valor_repetido - Este método verificar quandas vezes o número selecionado foi repetido.
