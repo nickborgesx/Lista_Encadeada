@@ -179,5 +179,6 @@ lista.adicionar(4)
 lista.ordenamento_sort()
 print(lista)
 print({lista.tamanho},' <-- Tamanho da Lista')
+print(lista.procurar_valor(0))
 
 #OK
