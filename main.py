@@ -91,6 +91,16 @@ class ListaSimples:
                 perc = perc.proximo #Quando o valor do index for encontrado, ele irá retornar com os dados
             return perc
     
+    def procurar_valor(self,index): #Irá percorrer a lista até o index selecionado e irá retornar o valor.
+        if self.tamanho == 0: #Verificar se tem algo na lista
+            raise IndexError('Não existe elementos na lista')
+        if index == self.tamanho -1:
+            return f' O valor do index selecionado é',self.inicio
+        perc = self.inicio
+        for i in range(index):
+            perc = perc.proximo #Quando o valor do index for encontrado, ele irá retornar com os dados
+        return f' O valor do index selecionado é ',perc.valor
+    
     def editar_item(self, index, valor): #Criará um novo nó que irá substituir o item selecionado
         no = _No(valor) #Criação do No
         if index >= self.tamanho: #Verificar se a edição do Index está correta
