@@ -47,7 +47,10 @@ class ListaSimples:
     
     def remover_item(self, valor): #Remover Item da lista
         if self.tamanho == 0:
-            raise ValueError('Lista está vazia.')
+            TypeError('Lista está Vazia.')
+        if valor == 1:
+            self.inicio = self.inicio.proximo
+            self.tamanho -= 1
         perc = self.inicio
         if perc.valor == valor: #Se for o início
             self.inicio = self.inicio.proximo #O inicio vai começar da segunda casa
@@ -58,8 +61,8 @@ class ListaSimples:
                 aux = perc.proximo #Aux será o apontador para o item da exclusão
                 perc.proximo = aux.proximo #Liga o antecessor do Aux com o próximo do Aux
                 self.tamanho -= 1
-                return
             perc = perc.proximo
+            return
         raise ValueError('Não existe esse valor na lista.')
     
     def inserir(self,index,valor): #Inserir um No entre dois No's (elementos).
@@ -95,11 +98,11 @@ class ListaSimples:
         if self.tamanho == 0: #Verificar se tem algo na lista
             raise IndexError('Não existe elementos na lista')
         if index == self.tamanho -1:
-            return f' O valor do index selecionado é',self.inicio
+            return f' O valor do index é',self.inicio
         perc = self.inicio
         for i in range(index):
-            perc = perc.proximo #Quando o valor do index for encontrado, ele irá retornar com os dados
-        return f' O valor do index selecionado é ',perc.valor
+                perc = perc.proximo #Quando o valor do index for encontrado, ele irá retornar com os dados
+        return print('O valor do index',{index}, 'é:',{perc.valor})
     
     def editar_item(self, index, valor): #Criará um novo nó que irá substituir o item selecionado
         no = _No(valor) #Criação do No
@@ -163,13 +166,15 @@ lista.adicionar(1)
 lista.adicionar(2) 
 lista.adicionar(3)
 lista.adicionar(4)
-print(lista)
 lista.inserir(0, 6)
+print(lista)
 lista.remover_index(1)
 lista.editar_item(0, 5)
+print(lista)
 lista.editar_item(2, 5)
+print(lista)
 lista.adicionar(5)
-lista.remover_item(4)
+lista.remover_item(1)
 print(lista)
 print({lista.tamanho},' <-- Tamanho da Lista')
 print(lista.valor_repetido(5))
@@ -178,6 +183,6 @@ lista.adicionar(4)
 lista.ordenamento_sort()
 print(lista,'<-- Lista Ordenada')
 print({lista.tamanho},' <-- Tamanho da Lista')
-print(lista.procurar_valor(0))
+lista.procurar_valor(0)
 
 #OK
